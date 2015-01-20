@@ -1863,7 +1863,7 @@ public class SQLiteDatabase extends SQLiteClosable {
         // Log commit statements along with the most recently executed
         // SQL statement for disambiguation.  Note that instance
         // equality to COMMIT_SQL is safe here.
-        if (sql == COMMIT_SQL) {
+        if (sql.equals(COMMIT_SQL)) {
             logTimeStat(mLastSqlStatement, timeStart, COMMIT_SQL);
         } else {
             logTimeStat(sql, timeStart, null);
